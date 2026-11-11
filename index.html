@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Calculadora de Geometría</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card-math {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            background-color: #ffffff;
+        }
+        select option:hover {
+            background-color: #e9ecef !important;
+            color: #000 !important;
+        }
+    </style>
+</head>
+<body class="pb-5">
+
+    <header class="container-fluid p-5 bg-dark text-white text-center shadow-sm mb-4 border-bottom border-success border-5">
+        <h1 class="display-5 fw-bold">Calculadora de Volumenes y Areas</h1>
+    </header>
+
+    <main class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card card-math p-4">
+                    <form action="#">
+                       
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold text-secondary">Seleccione una opción:</label>
+                            <select id="tipoCalculo" class="form-select bg-light" onchange="cambiar();">
+                                <option value="1">Volumen</option>
+                                <option value="2">Área</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold text-secondary">Seleccione una figura:</label>
+                            <select id="figuras" class="form-select bg-light">
+                                <option value="1">Prisma Rectangular</option>
+                                <option value="2">Prisma Triangular</option>
+                                <option value="3">Esfera</option>
+                            </select>
+                        </div>
+
+                    
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-dark py-2 fw-semibold" onclick="confirmar();">Confirmar y Calcular</button>
+                            <button type="button" class="btn btn-outline-dark py-2 fw-semibold" onclick="memoria();">Ver Memoria</button>
+                        </div>
+                    </form>
+
+                    <article class="mt-4 p-3 bg-dark text-white rounded text-center">
+                        <p id="resultadoGeo" class="fs-5 m-0 text-success fw-bold">Esperando cálculo...</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="js/js.js"></script>
+    <script src="js/storage.js"></script>
+</body>
+</html>
